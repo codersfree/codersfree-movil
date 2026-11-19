@@ -35,6 +35,11 @@ return [
         ],
     ],
 
+    'expo' => [
+        'push_url' => env('EXPO_PUSH_URL', 'https://exp.host/--/api/v2/push/send'),
+        'access_token' => env('EXPO_ACCESS_TOKEN'),
+    ],
+
     'izipay' => [
         'username' => env('IZIPAY_USERNAME'),
         'password' => env('IZIPAY_PASSWORD'),

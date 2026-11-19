@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241892716117",
+    "project_id": "codersfree-24f64",
+    "storage_bucket": "codersfree-24f64.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241892716117:android:77274ec59812bc4a40eedc",
+        "android_client_info": {
+          "package_name": "com.codersfree.movil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu2mj2S3sAosAggxM_Uw1Rjq0_cHWsMvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

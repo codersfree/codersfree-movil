@@ -27,8 +27,9 @@ it('forbids a user without the permission', function () {
 it('exposes roles and permissions on the user resource', function () {
     Sanctum::actingAs(User::factory()->instructor()->create());
 
-    $this->getJson('/api/v1/user')
+    $response = $this->getJson('/api/v1/user')
         ->assertOk()
-        ->assertJsonPath('data.roles', ['instructor'])
-        ->assertJsonPath('data.permissions', ['instructor.courses.index']);
+        ->assertJsonPath('data.roles', ['instructor']);
+
+    expect($response->json('data.permissions'))->toContain('instructor.courses.index', 'instructor.courses.publish');
 });

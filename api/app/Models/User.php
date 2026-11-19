@@ -61,6 +61,24 @@ class User extends Authenticatable
         return $this->belongsToMany(Lesson::class, 'lesson_user')->withTimestamps();
     }
 
+    /**
+     * @return HasMany<PushToken, $this>
+     */
+    public function pushTokens(): HasMany
+    {
+        return $this->hasMany(PushToken::class);
+    }
+
+    /**
+     * Courses the user created as instructor.
+     *
+     * @return HasMany<Course, $this>
+     */
+    public function createdCourses(): HasMany
+    {
+        return $this->hasMany(Course::class);
+    }
+
     public function isEnrolledIn(Course $course): bool
     {
         return $this->enrolledCourses()->whereKey($course->getKey())->exists();

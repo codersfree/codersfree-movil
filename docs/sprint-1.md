@@ -51,9 +51,9 @@ H01, H02, H03, H04, H05, H07, H08, H09, H10, H12, H13, H14, H15 (ver product-bac
 ### Grupo 4 · Instructor y notificaciones (H12, H13, H14 y H15)
 | ID | Tarea | Horas | Hecho |
 |---|---|---|---|
-| T14 | Diseño: mis cursos del instructor, editor del curso y temario | 0.2 | [ ] |
-| T15 | Construcción: API de cursos del instructor, secciones, lecciones, publicar y tokens push; envío con la API de Expo Push desde Laravel; app con portada por cámara/galería y expo-notifications. La push no funciona en Expo Go (desde el SDK 53): usar un development build (`npx expo run:android` o `eas build --profile development`), lanzado apenas termine el Grupo 1 | 0.8 | [ ] |
-| T16 | Revisión de H12, H13, H14 y H15 y PR | 0.25 | [ ] |
+| T14 | Diseño: mis cursos del instructor, editor del curso y temario | 0.2 | [x] |
+| T15 | Construcción: API de cursos del instructor, secciones, lecciones, publicar y tokens push; envío con la API de Expo Push desde Laravel; app con portada por cámara/galería y expo-notifications. La push no funciona en Expo Go (desde el SDK 53): usar un development build (`npx expo run:android` o `eas build --profile development`), lanzado apenas termine el Grupo 1 | 0.8 | [x] |
+| T16 | Revisión de H12, H13, H14 y H15 y PR | 0.25 | [x] |
 
 **Total:** 5.5 h
 

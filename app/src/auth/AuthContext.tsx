@@ -3,6 +3,7 @@ import { use, useCallback, useEffect, useMemo, useState, type PropsWithChildren 
 import * as authApi from '@/api/auth';
 import type { RegisterData, User } from '@/api/auth';
 import { ApiError, TOKEN_KEY } from '@/api/client';
+import { forgetPushToken } from '@/notifications/push';
 import { AuthContext } from './authContextObject';
 import { deleteSecureItem, getSecureItem, setSecureItem } from './secureStorage';
 
@@ -71,6 +72,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
   );
 
   const signOut = useCallback(async () => {
+    await forgetPushToken();
     try {
       await authApi.logout();
     } catch {

@@ -8,18 +8,13 @@ export type PickedPhoto = {
   mimeType?: string | null;
 };
 
-const PICKER_OPTIONS: ImagePicker.ImagePickerOptions = {
-  mediaTypes: ['images'],
-  allowsEditing: true,
-  aspect: [1, 1],
-  quality: 0.7,
-};
-
 /**
  * Pide el permiso de cámara o galería antes de abrirlas.
  * Si se niega, deja `deniedSource` para mostrar la explicación y el botón de ajustes.
+ * `aspect` define el recorte: cuadrado para el perfil, 16:9 para la portada de un curso.
  */
-export function useProfilePhoto() {
+export function useProfilePhoto(aspect: [number, number] = [1, 1]) {
+  const [aspectX, aspectY] = aspect;
   const [picked, setPicked] = useState<PickedPhoto | null>(null);
   const [deniedSource, setDeniedSource] = useState<PhotoSource | null>(null);
 
@@ -34,16 +29,20 @@ export function useProfilePhoto() {
       return;
     }
 
+    const options: ImagePicker.ImagePickerOptions = {
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      aspect: [aspectX, aspectY],
+      quality: 0.7,
+    };
     const result =
-      source === 'camera'
-        ? await ImagePicker.launchCameraAsync(PICKER_OPTIONS)
-        : await ImagePicker.launchImageLibraryAsync(PICKER_OPTIONS);
+      source === 'camera' ? await ImagePicker.launchCameraAsync(options) : await ImagePicker.launchImageLibraryAsync(options);
 
     if (!result.canceled && result.assets[0]) {
       const asset = result.assets[0];
       setPicked({ uri: asset.uri, mimeType: asset.mimeType });
     }
-  }, []);
+  }, [aspectX, aspectY]);
 
   return {
     picked,

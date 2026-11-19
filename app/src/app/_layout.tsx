@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 
 import { AuthProvider, useAuth } from '@/auth/AuthContext';
 import { PERMISSIONS } from '@/auth/permissions';
+import { usePushNotifications } from '@/notifications/push';
 import { colors } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
@@ -36,6 +37,9 @@ function RootNavigator({ fontsLoaded }: { fontsLoaded: boolean }) {
   const { user, isLoading, can } = useAuth();
   const ready = fontsLoaded && !isLoading;
 
+  // H15 · Con sesión iniciada se pide el permiso de notificaciones y se registra el celular.
+  usePushNotifications(ready && user ? user.id : null);
+
   useEffect(() => {
     if (ready) {
       SplashScreen.hide();
@@ -61,6 +65,8 @@ function RootNavigator({ fontsLoaded }: { fontsLoaded: boolean }) {
 
       <Stack.Protected guard={can(PERMISSIONS.instructorPanel)}>
         <Stack.Screen name="instructor" />
+        <Stack.Screen name="panel/curso/[slug]" />
+        <Stack.Screen name="panel/temario/[slug]" />
       </Stack.Protected>
 
       <Stack.Protected guard={!user}>
