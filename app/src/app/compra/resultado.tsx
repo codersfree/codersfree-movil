@@ -65,7 +65,7 @@ export default function ResultadoScreen() {
         <View style={styles.actions}>
           {paid ? (
             <>
-              <Button title="Ir al curso" onPress={() => router.replace('/mis-cursos')} />
+              <Button title="Ir al curso" onPress={() => router.replace({ pathname: '/aprender/[slug]', params: { slug } })} />
               <Button title="Seguir explorando" variant="outline" onPress={() => router.replace('/')} />
             </>
           ) : (

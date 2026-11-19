@@ -51,6 +51,16 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
+    /**
+     * Lessons the user marked as watched.
+     *
+     * @return BelongsToMany<Lesson, $this>
+     */
+    public function completedLessons(): BelongsToMany
+    {
+        return $this->belongsToMany(Lesson::class, 'lesson_user')->withTimestamps();
+    }
+
     public function isEnrolledIn(Course $course): bool
     {
         return $this->enrolledCourses()->whereKey($course->getKey())->exists();

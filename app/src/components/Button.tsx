@@ -3,7 +3,7 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-nati
 
 import { colors, fonts, fontSizes, radii, sizes, spacing } from '@/theme';
 
-type Variant = 'primary' | 'accent' | 'outline' | 'danger' | 'ghost';
+type Variant = 'primary' | 'accent' | 'outline' | 'success' | 'danger' | 'ghost';
 
 type Props = {
   title: string;
@@ -18,6 +18,7 @@ const textColor: Record<Variant, string> = {
   primary: colors.night,
   accent: colors.night,
   outline: colors.snow,
+  success: colors.green,
   danger: colors.red,
   ghost: colors.textSecondary,
 };
@@ -65,6 +66,10 @@ const styles = StyleSheet.create({
   outline: {
     borderWidth: 1,
     borderColor: colors.borderStrong,
+  },
+  success: {
+    borderWidth: 1,
+    borderColor: colors.green,
   },
   danger: {
     borderWidth: 1,

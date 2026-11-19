@@ -15,7 +15,16 @@ use Illuminate\Support\Str;
  */
 class CatalogSeeder extends Seeder
 {
-    private const VIDEO_URL = 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+    /**
+     * Videos públicos de prueba; las lecciones de ejemplo los alternan.
+     *
+     * @var list<string>
+     */
+    public const SAMPLE_VIDEOS = [
+        'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4',
+        'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+        'https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8',
+    ];
 
     /**
      * @var array<string, list<array{title: string, level: CourseLevel, price: string, description: string, sections: array<string, list<string>>}>>
@@ -113,7 +122,7 @@ class CatalogSeeder extends Seeder
                     foreach ($lessons as $index => $lessonTitle) {
                         $section->lessons()->create([
                             'title' => $lessonTitle,
-                            'video_url' => self::VIDEO_URL,
+                            'video_url' => self::SAMPLE_VIDEOS[$index % count(self::SAMPLE_VIDEOS)],
                             'position' => $index + 1,
                         ]);
                     }
