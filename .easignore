@@ -1,0 +1,34 @@
+# EAS Build solo necesita la app móvil (app/). Este archivo reemplaza a los .gitignore al subir el proyecto.
+
+# Fuera del build: la API (además tiene un symlink en public/storage que Windows no puede copiar), docs y configuración local
+/api
+/docs
+/.claude
+/.mcp.json
+/CLAUDE.md
+
+# Reglas de app/.gitignore
+node_modules/
+/app/.expo/
+/app/dist/
+/app/web-build/
+/app/expo-env.d.ts
+/app/.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+/app/android
+/app/ios
+/app/.env
+.claude/settings.local.json

@@ -1,7 +1,5 @@
-import { File } from 'expo-file-system';
-import { Platform } from 'react-native';
-
 import { apiRequest } from './client';
+import { imageFormData } from './files';
 
 export type User = {
   id: number;
@@ -40,14 +38,17 @@ export async function fetchUser() {
 }
 
 export async function uploadProfilePhoto(uri: string, mimeType?: string | null) {
-  const extension = (mimeType ?? 'image/jpeg').split('/')[1] ?? 'jpg';
-  const form = new FormData();
-
-  // En el SDK 58 el fetch global es expo/fetch: no acepta { uri, name, type }, sino un File de expo-file-system.
-  // En la web no existe expo-file-system, así que se usa el Blob del navegador.
-  const photo = Platform.OS === 'web' ? await (await fetch(uri)).blob() : (new File(uri) as unknown as Blob);
-  form.append('photo', photo, `perfil.${extension}`);
-
+  const form = await imageFormData('photo', uri, mimeType);
   const { data } = await apiRequest<{ data: User }>('/user/photo', { method: 'POST', body: form });
   return data;
+}
+
+/** Guarda el token de notificaciones de este celular para el usuario. */
+export function savePushToken(token: string) {
+  return apiRequest<void>('/push-tokens', { method: 'POST', body: { token } });
+}
+
+/** Olvida el token de notificaciones de este celular (al cerrar sesión). */
+export function deletePushToken(token: string) {
+  return apiRequest<void>('/push-tokens', { method: 'DELETE', body: { token } });
 }

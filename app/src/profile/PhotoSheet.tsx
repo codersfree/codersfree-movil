@@ -9,6 +9,8 @@ type Props = {
   visible: boolean;
   onChoose: (source: PhotoSource) => void;
   onClose: () => void;
+  title?: string;
+  subtitle?: string;
 };
 
 function Option({ icon, label, onPress }: { icon: IconName; label: string; onPress: () => void }) {
@@ -23,8 +25,14 @@ function Option({ icon, label, onPress }: { icon: IconName; label: string; onPre
   );
 }
 
-/** Hoja "Foto de perfil": tomar foto o elegir de la galería. */
-export function PhotoSheet({ visible, onChoose, onClose }: Props) {
+/** Hoja para tomar una foto o elegirla de la galería (perfil o portada de un curso). */
+export function PhotoSheet({
+  visible,
+  onChoose,
+  onClose,
+  title = 'Foto de perfil',
+  subtitle = 'Tómate una foto o elige una de tu galería.',
+}: Props) {
   const insets = useSafeAreaInsets();
 
   return (
@@ -34,9 +42,9 @@ export function PhotoSheet({ visible, onChoose, onClose }: Props) {
         <View style={styles.handle} />
         <View style={styles.header}>
           <Text style={styles.title} accessibilityRole="header">
-            FOTO DE PERFIL
+            {title.toUpperCase()}
           </Text>
-          <Text style={styles.subtitle}>Tómate una foto o elige una de tu galería.</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
         <Option icon="camera" label="Tomar foto" onPress={() => onChoose('camera')} />
         <Option icon="gallery" label="Elegir de la galería" onPress={() => onChoose('gallery')} />

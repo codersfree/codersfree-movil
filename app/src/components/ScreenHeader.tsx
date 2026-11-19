@@ -10,10 +10,11 @@ type Props = {
   subtitle?: ReactNode;
   icon?: 'back' | 'close';
   onBack?: () => void;
+  right?: ReactNode;
 };
 
 /** Barra superior de pantallas apiladas: volver (o cerrar) y título. */
-export function ScreenHeader({ title, subtitle, icon = 'back', onBack }: Props) {
+export function ScreenHeader({ title, subtitle, icon = 'back', onBack, right }: Props) {
   const goBack = onBack ?? (() => (router.canGoBack() ? router.back() : router.replace('/')));
 
   return (
@@ -31,6 +32,7 @@ export function ScreenHeader({ title, subtitle, icon = 'back', onBack }: Props) 
         </Text>
         {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
       </View>
+      {right ? <View style={styles.right}>{right}</View> : null}
     </View>
   );
 }
@@ -51,6 +53,9 @@ const styles = StyleSheet.create({
     height: sizes.touch,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  right: {
+    paddingRight: spacing.sm,
   },
   texts: {
     flex: 1,

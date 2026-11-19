@@ -78,6 +78,7 @@ export const sizes = {
   coverHero: 220,
   robotSmall: 28,
   robotTiny: 22,
+  textarea: 104,
   chip: 40,
   bottomBar: 88,
 } as const;

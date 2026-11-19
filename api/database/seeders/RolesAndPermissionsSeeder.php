@@ -17,7 +17,19 @@ class RolesAndPermissionsSeeder extends Seeder
      * @var list<string>
      */
     public const INSTRUCTOR_PERMISSIONS = [
+        'instructor.categories.index',
         'instructor.courses.index',
+        'instructor.courses.store',
+        'instructor.courses.show',
+        'instructor.courses.update',
+        'instructor.courses.cover',
+        'instructor.courses.publish',
+        'instructor.sections.store',
+        'instructor.sections.update',
+        'instructor.sections.destroy',
+        'instructor.lessons.store',
+        'instructor.lessons.update',
+        'instructor.lessons.destroy',
     ];
 
     /**
