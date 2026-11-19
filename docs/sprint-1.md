@@ -25,14 +25,14 @@ H01, H02, H03, H04, H05, H07, H08, H09, H10, H12, H13, H14, H15 (ver product-bac
 | T01 | Crear el repo e instalar Laravel 13 con Boost en api/, Expo SDK 58 en app/ y el MCP de Expo | 0.4 | [x] |
 | T02 | Lienzo de Claude Design: identidad visual (desde la referencia) y plantillas base (acceso, alumno, instructor) | 0.3 | [x] |
 | T03 | CLAUDE.md de la raíz y docs/rules-base.md | 0.2 | [x] |
-| T04 | PR con docs/ y CLAUDE.md; después del merge, `php artisan boost:update` | 0.1 | [ ] |
+| T04 | PR con docs/ y CLAUDE.md; después del merge, `php artisan boost:update` | 0.1 | [x] |
 
 ### Grupo 1 · Autenticación (H01, H02 y H03)
 | ID | Tarea | Horas | Hecho |
 |---|---|---|---|
-| T05 | Diseño: registro, inicio de sesión y perfil con foto | 0.2 | [ ] |
-| T06 | Construcción: API con Sanctum (registro, login, logout, usuario, foto) y app (navegación por rol, contexto de sesión, token en SecureStore, foto con expo-image-picker) | 0.6 | [ ] |
-| T07 | Revisión de H01, H02 y H03 y PR | 0.2 | [ ] |
+| T05 | Diseño: registro, inicio de sesión y perfil con foto | 0.2 | [x] |
+| T06 | Construcción: API con Sanctum (registro, login, logout, usuario, foto) y app (navegación por rol, contexto de sesión, token en SecureStore, foto con expo-image-picker) | 0.6 | [x] |
+| T07 | Revisión de H01, H02 y H03 y PR | 0.2 | [x] |
 
 ### Grupo 2 · Catálogo y compra (H04, H05 y H07)
 | ID | Tarea | Horas | Hecho |
