@@ -37,9 +37,9 @@ H01, H02, H03, H04, H05, H07, H08, H09, H10, H12, H13, H14, H15 (ver product-bac
 ### Grupo 2 · Catálogo y compra (H04, H05 y H07)
 | ID | Tarea | Horas | Hecho |
 |---|---|---|---|
-| T08 | Diseño: inicio con catálogo, detalle del curso y pago | 0.2 | [ ] |
-| T09 | Construcción: API de categorías, cursos (paginados) y compras; app con FlatList optimizada. Izipay: la API crea el formToken con las credenciales de prueba, la app muestra el formulario de Izipay en un WebView (react-native-webview) y la API valida la respuesta (hash) antes de matricular | 1.0 | [ ] |
-| T10 | Revisión de H04, H05 y H07 y PR | 0.3 | [ ] |
+| T08 | Diseño: inicio con catálogo, detalle del curso y pago | 0.2 | [x] |
+| T09 | Construcción: API de categorías, cursos (paginados) y compras; app con FlatList optimizada. Izipay: la API crea el formToken con las credenciales de prueba, la app muestra el formulario de Izipay en un WebView (react-native-webview) y la API valida la respuesta (hash) antes de matricular | 1.0 | [x] |
+| T10 | Revisión de H04, H05 y H07 y PR | 0.3 | [x] |
 
 ### Grupo 3 · Aprendizaje (H08, H09 y H10)
 | ID | Tarea | Horas | Hecho |

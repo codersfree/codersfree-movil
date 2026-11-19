@@ -49,6 +49,13 @@ function RootNavigator({ fontsLoaded }: { fontsLoaded: boolean }) {
   return (
     <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.night } }}>
       <Stack.Screen name="(alumno)" />
+      <Stack.Screen name="curso/[slug]" />
+
+      <Stack.Protected guard={!!user}>
+        <Stack.Screen name="compra/[slug]" />
+        <Stack.Screen name="compra/pago" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="compra/resultado" options={{ gestureEnabled: false }} />
+      </Stack.Protected>
 
       <Stack.Protected guard={can(PERMISSIONS.instructorPanel)}>
         <Stack.Screen name="instructor" />

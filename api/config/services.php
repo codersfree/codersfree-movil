@@ -35,4 +35,13 @@ return [
         ],
     ],
 
+    'izipay' => [
+        'username' => env('IZIPAY_USERNAME'),
+        'password' => env('IZIPAY_PASSWORD'),
+        'public_key' => env('IZIPAY_PUBLIC_KEY'),
+        'hmac_key' => env('IZIPAY_HMAC_KEY'),
+        'api_url' => env('IZIPAY_API_URL', 'https://api.micuentaweb.pe'),
+        'static_url' => env('IZIPAY_STATIC_URL', 'https://static.micuentaweb.pe'),
+    ],
+
 ];

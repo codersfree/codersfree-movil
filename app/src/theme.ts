@@ -33,7 +33,9 @@ export const fonts = {
 } as const;
 
 export const fontSizes = {
+  tiny: 10,
   label: 12,
+  chip: 14,
   small: 13,
   body: 15,
   paragraph: 16,
@@ -70,8 +72,16 @@ export const sizes = {
   avatarBadge: 40,
   preview: 280,
   icon: 24,
+  coverThumbWidth: 104,
+  coverThumbHeight: 78,
+  coverHero: 220,
+  robotSmall: 28,
+  robotTiny: 22,
+  chip: 40,
+  bottomBar: 88,
 } as const;
 
 export const letterSpacing = {
+  tight: 1,
   label: 1.7,
 } as const;

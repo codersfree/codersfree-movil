@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontFamily: fonts.bodyMedium,
-    fontSize: 14,
+    fontSize: fontSizes.chip,
     color: colors.label,
   },
   input: {
