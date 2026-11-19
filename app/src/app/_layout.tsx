@@ -55,6 +55,8 @@ function RootNavigator({ fontsLoaded }: { fontsLoaded: boolean }) {
         <Stack.Screen name="compra/[slug]" />
         <Stack.Screen name="compra/pago" options={{ gestureEnabled: false }} />
         <Stack.Screen name="compra/resultado" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="aprender/[slug]/index" />
+        <Stack.Screen name="aprender/[slug]/[lessonId]" />
       </Stack.Protected>
 
       <Stack.Protected guard={can(PERMISSIONS.instructorPanel)}>

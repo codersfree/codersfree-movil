@@ -118,7 +118,7 @@ export default function ResumenCompraScreen() {
 
           <View style={styles.actions}>
             {alreadyOwned ? (
-              <Button title="Ir al curso" variant="accent" onPress={() => router.replace('/mis-cursos')} />
+              <Button title="Ir al curso" variant="accent" onPress={() => router.replace({ pathname: '/aprender/[slug]', params: { slug } })} />
             ) : (
               <Button title={`Pagar ${course.price_label}`} onPress={pay} loading={paying} />
             )}

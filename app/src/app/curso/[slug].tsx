@@ -136,7 +136,7 @@ export default function CursoScreen() {
         )}
         <View style={styles.barButton}>
           {course.is_enrolled ? (
-            <Button title="Ir al curso" variant="accent" onPress={() => router.replace('/mis-cursos')} />
+            <Button title="Ir al curso" variant="accent" onPress={() => router.push({ pathname: '/aprender/[slug]', params: { slug } })} />
           ) : (
             <Button title="Comprar" onPress={buy} />
           )}

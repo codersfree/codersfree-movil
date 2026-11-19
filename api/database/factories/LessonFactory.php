@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Lesson;
 use App\Models\Section;
+use Database\Seeders\CatalogSeeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -22,7 +23,7 @@ class LessonFactory extends Factory
         return [
             'section_id' => Section::factory(),
             'title' => Str::ucfirst(fake()->words(4, true)),
-            'video_url' => 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            'video_url' => fake()->randomElement(CatalogSeeder::SAMPLE_VIDEOS),
             'position' => 1,
         ];
     }

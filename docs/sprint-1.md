@@ -44,9 +44,9 @@ H01, H02, H03, H04, H05, H07, H08, H09, H10, H12, H13, H14, H15 (ver product-bac
 ### Grupo 3 · Aprendizaje (H08, H09 y H10)
 | ID | Tarea | Horas | Hecho |
 |---|---|---|---|
-| T11 | Diseño: Mis cursos, temario con avance y lección | 0.15 | [ ] |
-| T12 | Construcción: API de mis cursos y avance; app con expo-video, y pantalla completa al girar con el acelerómetro (expo-sensors) y expo-screen-orientation | 0.45 | [ ] |
-| T13 | Revisión de H08, H09 y H10 y PR | 0.15 | [ ] |
+| T11 | Diseño: Mis cursos, temario con avance y lección | 0.15 | [x] |
+| T12 | Construcción: API de mis cursos y avance; app con expo-video, y pantalla completa al girar con el acelerómetro (expo-sensors) y expo-screen-orientation | 0.45 | [x] |
+| T13 | Revisión de H08, H09 y H10 y PR | 0.15 | [x] |
 
 ### Grupo 4 · Instructor y notificaciones (H12, H13, H14 y H15)
 | ID | Tarea | Horas | Hecho |

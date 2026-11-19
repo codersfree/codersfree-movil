@@ -5,6 +5,7 @@
 
 export const colors = {
   night: '#0B1A23',
+  black: '#000000',
   cyan: '#22D3EE',
   cyanLight: '#67E8F9',
   orange: '#FF8A3D',
