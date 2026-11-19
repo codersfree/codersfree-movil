@@ -26,5 +26,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'María Ríos',
             'email' => 'alumno@codersfree.com',
         ]);
+
+        $this->call(CatalogSeeder::class);
     }
 }

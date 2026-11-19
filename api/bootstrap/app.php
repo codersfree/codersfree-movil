@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'route.permission' => CheckRoutePermission::class,
         ]);
+
+        // Izipay envía el resultado del pago por POST desde su formulario: la URL va firmada y el hash se valida.
+        $middleware->validateCsrfTokens(except: ['pago/*']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

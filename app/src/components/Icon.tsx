@@ -17,6 +17,8 @@ const ICONS = {
   logout: require('@/assets/icons/logout.svg'),
   back: require('@/assets/icons/back.svg'),
   forward: require('@/assets/icons/forward.svg'),
+  play: require('@/assets/icons/play.svg'),
+  lock: require('@/assets/icons/lock.svg'),
   check: require('@/assets/icons/check.svg'),
   error: require('@/assets/icons/error.svg'),
   close: require('@/assets/icons/close.svg'),
