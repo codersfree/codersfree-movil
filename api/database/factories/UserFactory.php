@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -41,5 +42,15 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    /**
+     * Give the user the instructor role (access to the instructor panel).
+     */
+    public function instructor(): static
+    {
+        return $this->afterCreating(function (User $user) {
+            $user->assignRole(RolesAndPermissionsSeeder::instructorRole());
+        });
     }
 }
