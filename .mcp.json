@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "expo-mcp": {
+      "type": "http",
+      "url": "https://mcp.expo.dev/mcp"
+    },
+    "laravel-boost": {
+      "command": "php",
+      "args": [
+        "api/artisan",
+        "boost:mcp"
+      ]
+    }
+  }
+}
